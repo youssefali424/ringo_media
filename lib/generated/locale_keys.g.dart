@@ -7,8 +7,10 @@ abstract class  LocaleKeys {
   static const signInToYourAccount = 'signInToYourAccount';
   static const orLoginWithAccount = 'orLoginWithAccount';
   static const username = 'username';
+  static const enterUsernameOrEmail = 'enterUsernameOrEmail';
   static const forgotPassword = 'forgotPassword';
   static const password = 'password';
+  static const enterPasswordHere = 'enterPasswordHere';
   static const continueWithGoogle = 'continueWithGoogle';
   static const continueWithFacebook = 'continueWithFacebook';
   static const continueWithApple = 'continueWithApple';

@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:ringo_media/features/auth/login/login_screen.dart';
+import 'package:ringo_media/features/auth/login/presentation/screens/login_screen.dart';
 
 GoRouter generateRoutes() {
   return GoRouter(
