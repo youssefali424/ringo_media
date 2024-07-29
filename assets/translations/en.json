@@ -1,0 +1,20 @@
+{
+    "appName": "Ringo Media",
+    "login": "Login",
+    "register": "Register",
+    "signInToYourAccount": "Sign in to your account",
+    "orLoginWithAccount": "or continue with account",
+    "username": "Username / Email",
+    "forgotPassword": "Forgot Password ?",
+    "password": "Password",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithFacebook": "Continue with Facebook",
+    "continueWithApple": "Continue with Apple",
+    "dontHaveAnAccount": "Don't have an account ?",
+    "registerHere": "Register here",
+    "projectSummary": "Project Summary",
+    "viewAllProjects": "View All Projects",
+    "calendar": "Calendar",
+    "schedule": "Schedule",
+    "task": "Task"
+}
