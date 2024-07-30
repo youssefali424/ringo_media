@@ -19,5 +19,15 @@
     "calendar": "Calendar",
     "schedule": "Schedule",
     "task": "Task",
-    "emailError": "Please enter a valid email address"
+    "emailError": "Please enter a valid email address",
+    "grid": "Grid",
+    "account": "Account",
+    "search": "Search",
+    "searchProjectHere": "Search project here",
+    "projectInProgress": "Project In Progress",
+    "projectCompleted": "Project Completed",
+    "projectCancelled": "Project Cancelled",
+    "productivty": "Productivity",
+    "chooseDate": "Choose Date",
+    "Continue": "Continue"
 }

@@ -7,13 +7,19 @@ import 'package:ringo_media/navigation/routes.dart';
 import 'core/theme/theme.dart';
 import 'generated/locale_keys.g.dart';
 
-class MyApp extends ConsumerWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var routes = generateRoutes();
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: LocaleKeys.appName, 
+      title: LocaleKeys.appName,
       debugShowCheckedModeBanner: false,
       theme: generateLightTheme(),
       // darkTheme: ThemeData(
@@ -24,7 +30,7 @@ class MyApp extends ConsumerWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      routerConfig: generateRoutes(),
+      routerConfig: routes,
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle(

@@ -47,6 +47,7 @@ dependencies:
   stack_trace: ^1.11.1
   freezed: ^2.5.2
   collection: ^1.18.0
+  table_calendar: ^3.1.2
 
 dev_dependencies:
   flutter_test:

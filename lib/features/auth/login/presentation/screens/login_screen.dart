@@ -2,10 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ringo_media/core/extensions/widgets/padding.dart';
 import 'package:ringo_media/core/theme/font_extension.dart';
 import 'package:ringo_media/features/auth/di/login_di.dart';
 import 'package:ringo_media/features/auth/login/presentation/view_models/login_view_model.dart';
+import 'package:ringo_media/features/home/project/domain/entities/tabs.dart';
 import 'package:ringo_media/generated/locale_keys.g.dart';
 
 import '../../domain/entities/auth_type.dart';
@@ -112,7 +114,9 @@ class _LoginScreen extends ConsumerWidget {
                                 var success = ref
                                     .read(loginViewModelProvider.notifier)
                                     .login();
-                                if (success) {}
+                                if (success) {
+                                  GoRouter.of(context).go('/home/${Tabs.project.route}');
+                                }
                               }
                             : null,
                         child: Text(LocaleKeys.login.tr()),

@@ -22,5 +22,15 @@ abstract class  LocaleKeys {
   static const schedule = 'schedule';
   static const task = 'task';
   static const emailError = 'emailError';
+  static const grid = 'grid';
+  static const account = 'account';
+  static const search = 'search';
+  static const searchProjectHere = 'searchProjectHere';
+  static const projectInProgress = 'projectInProgress';
+  static const projectCompleted = 'projectCompleted';
+  static const projectCancelled = 'projectCancelled';
+  static const productivty = 'productivty';
+  static const chooseDate = 'chooseDate';
+  static const Continue = 'Continue';
 
 }

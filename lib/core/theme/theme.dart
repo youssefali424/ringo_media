@@ -19,14 +19,13 @@ const MaterialColor swatch = MaterialColor(
 );
 ThemeData generateLightTheme() {
   const secondary = Color(0xff96A0B5);
-  const disabledColor = Color(0xff96A0B5);
-  // var colorScheme = ColorScheme.fromSeed(seedColor: primary);
+  const disabledColor = Color(0xFFD0D5DC);
   var colorScheme = ColorScheme.fromSwatch(
     primarySwatch: swatch,
     backgroundColor: swatch[50],
   ).copyWith(
     secondary: secondary,
-    outline: secondary,
+    outline: swatch[200],
   );
   InputBorder inputBorder(Color color) =>
       UnderlineInputBorder(borderSide: BorderSide(color: color));
@@ -40,11 +39,26 @@ ThemeData generateLightTheme() {
       /// the given style guidelines in Figma
       /// which is why i depend on custom font handling
       textTheme: const TextTheme(
-        bodyLarge: TextStyle(),
+        bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        bodyMedium: TextStyle(),
+        bodySmall: TextStyle(),
+        displayLarge: TextStyle(),
+        displayMedium: TextStyle(),
+        displaySmall: TextStyle(),
+        headlineLarge: TextStyle(),
+        headlineMedium: TextStyle(),
+        headlineSmall: TextStyle(),
+        labelLarge: TextStyle(),
+        labelMedium: TextStyle(),
+        labelSmall: TextStyle(),
+        titleLarge: TextStyle(),
+        titleMedium: TextStyle(),
+        titleSmall: TextStyle(),
       ).apply(
         bodyColor: primary,
         displayColor: primary,
         fontFamily: "Urbanist",
+        decorationColor: primary,
       ),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
@@ -80,6 +94,8 @@ ThemeData generateLightTheme() {
           fontSize: 21,
           fontWeight: FontWeight.w600,
         ),
+        // alignLabelWithHint: true,
+
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintStyle: const TextStyle(
           color: secondary,
@@ -92,5 +108,13 @@ ThemeData generateLightTheme() {
         errorBorder: inputBorder(colorScheme.error),
         enabledBorder: inputBorder(secondary),
         disabledBorder: inputBorder(disabledColor),
-      ));
+        suffixIconColor: secondary,
+      ),
+      appBarTheme: AppBarTheme(
+          backgroundColor: swatch[100],
+          titleTextStyle: const TextStyle(
+              color: primary,
+              fontFamily: "Urbanist",
+              fontSize: 16,
+              fontWeight: FontWeight.bold)));
 }

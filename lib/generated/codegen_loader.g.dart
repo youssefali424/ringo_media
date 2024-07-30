@@ -21,8 +21,10 @@ class CodegenLoader extends AssetLoader{
   "signInToYourAccount": "Sign in to your account",
   "orLoginWithAccount": "or continue with account",
   "username": "Username / Email",
+  "enterUsernameOrEmail": "Enter Username or Email",
   "forgotPassword": "Forgot Password ?",
   "password": "Password",
+  "enterPasswordHere": "Enter password here",
   "continueWithGoogle": "Continue with Google",
   "continueWithFacebook": "Continue with Facebook",
   "continueWithApple": "Continue with Apple",
@@ -32,7 +34,18 @@ class CodegenLoader extends AssetLoader{
   "viewAllProjects": "View All Projects",
   "calendar": "Calendar",
   "schedule": "Schedule",
-  "task": "Task"
+  "task": "Task",
+  "emailError": "Please enter a valid email address",
+  "grid": "Grid",
+  "account": "Account",
+  "search": "Search",
+  "searchProjectHere": "Search project here",
+  "projectInProgress": "Project In Progress",
+  "projectCompleted": "Project Completed",
+  "projectCancelled": "Project Cancelled",
+  "productivty": "Productivity",
+  "chooseDate": "Choose Date",
+  "Continue": "Continue"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en};
 }
