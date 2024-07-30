@@ -4,7 +4,10 @@ abstract class FontTheme {
   final ThemeData theme;
   FontTheme({required this.theme});
 
-  String? get fontFamily => theme.textTheme.bodyMedium?.fontFamily;
+  String? get fontFamily {
+    print("fontFamily ${theme.textTheme.bodyLarge?.fontFamily}");
+    return theme.textTheme.bodyLarge?.fontFamily;
+  }
 
   TextStyle get xs => TextStyle(
         fontFamily: fontFamily,

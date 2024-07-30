@@ -53,13 +53,18 @@ class _LoginScreen extends ConsumerWidget {
                 style: Theme.of(context).medium.sm.secondary,
               ),
               const SizedBox(height: 40),
-              TextField(
-                controller: viewModel.emailController,
-                decoration: InputDecoration(
-                  labelText: LocaleKeys.username.tr(),
-                  hintText: LocaleKeys.enterUsernameOrEmail.tr(),
-                ),
-              ),
+              Consumer(builder: (context, ref, child) {
+                var emailError = ref.watch(
+                    loginViewModelProvider.select((value) => value.emailError));
+                return TextField(
+                  controller: viewModel.emailController,
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.username.tr(),
+                    hintText: LocaleKeys.enterUsernameOrEmail.tr(),
+                    errorText: emailError ? LocaleKeys.emailError.tr() : null,
+                  ),
+                );
+              }),
               Consumer(builder: (context, ref, child) {
                 var passwordVisible = ref.watch(loginViewModelProvider
                     .select((value) => value.passwordVisible));
@@ -102,7 +107,14 @@ class _LoginScreen extends ConsumerWidget {
                       var enabled = ref.watch(loginViewModelProvider
                           .select((value) => value.buttonEnabled));
                       return FilledButton(
-                        onPressed: enabled ? () {} : null,
+                        onPressed: enabled
+                            ? () {
+                                var success = ref
+                                    .read(loginViewModelProvider.notifier)
+                                    .login();
+                                if (success) {}
+                              }
+                            : null,
                         child: Text(LocaleKeys.login.tr()),
                       );
                     }),

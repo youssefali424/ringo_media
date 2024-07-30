@@ -18,5 +18,6 @@
     "viewAllProjects": "View All Projects",
     "calendar": "Calendar",
     "schedule": "Schedule",
-    "task": "Task"
+    "task": "Task",
+    "emailError": "Please enter a valid email address"
 }

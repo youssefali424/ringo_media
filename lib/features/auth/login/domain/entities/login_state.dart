@@ -9,7 +9,6 @@ class LoginState with _$LoginState implements BaseBlocState {
   const factory LoginState({
     @Default(false) buttonEnabled,
     @Default(false) bool emailError,
-    @Default(false) bool passwordError,
     @Default(false) bool passwordVisible,
     @Default(false) bool isLoading,
     @Default(false) bool hasNoConnection,

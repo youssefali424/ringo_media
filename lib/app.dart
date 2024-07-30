@@ -13,7 +13,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     return MaterialApp.router(
-      title: LocaleKeys.appName,
+      title: LocaleKeys.appName, 
+      debugShowCheckedModeBanner: false,
       theme: generateLightTheme(),
       // darkTheme: ThemeData(
       //     brightness: Brightness.dark,

@@ -21,5 +21,6 @@ abstract class  LocaleKeys {
   static const calendar = 'calendar';
   static const schedule = 'schedule';
   static const task = 'task';
+  static const emailError = 'emailError';
 
 }

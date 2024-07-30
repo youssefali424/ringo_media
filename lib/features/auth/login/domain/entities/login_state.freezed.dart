@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginState {
   dynamic get buttonEnabled => throw _privateConstructorUsedError;
   bool get emailError => throw _privateConstructorUsedError;
-  bool get passwordError => throw _privateConstructorUsedError;
   bool get passwordVisible => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasNoConnection => throw _privateConstructorUsedError;
@@ -38,7 +37,6 @@ abstract class $LoginStateCopyWith<$Res> {
   $Res call(
       {dynamic buttonEnabled,
       bool emailError,
-      bool passwordError,
       bool passwordVisible,
       bool isLoading,
       bool hasNoConnection,
@@ -60,7 +58,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   $Res call({
     Object? buttonEnabled = freezed,
     Object? emailError = null,
-    Object? passwordError = null,
     Object? passwordVisible = null,
     Object? isLoading = null,
     Object? hasNoConnection = null,
@@ -74,10 +71,6 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
       emailError: null == emailError
           ? _value.emailError
           : emailError // ignore: cast_nullable_to_non_nullable
-              as bool,
-      passwordError: null == passwordError
-          ? _value.passwordError
-          : passwordError // ignore: cast_nullable_to_non_nullable
               as bool,
       passwordVisible: null == passwordVisible
           ? _value.passwordVisible
@@ -110,7 +103,6 @@ abstract class _$$LoginStateImplCopyWith<$Res>
   $Res call(
       {dynamic buttonEnabled,
       bool emailError,
-      bool passwordError,
       bool passwordVisible,
       bool isLoading,
       bool hasNoConnection,
@@ -130,7 +122,6 @@ class __$$LoginStateImplCopyWithImpl<$Res>
   $Res call({
     Object? buttonEnabled = freezed,
     Object? emailError = null,
-    Object? passwordError = null,
     Object? passwordVisible = null,
     Object? isLoading = null,
     Object? hasNoConnection = null,
@@ -142,10 +133,6 @@ class __$$LoginStateImplCopyWithImpl<$Res>
       emailError: null == emailError
           ? _value.emailError
           : emailError // ignore: cast_nullable_to_non_nullable
-              as bool,
-      passwordError: null == passwordError
-          ? _value.passwordError
-          : passwordError // ignore: cast_nullable_to_non_nullable
               as bool,
       passwordVisible: null == passwordVisible
           ? _value.passwordVisible
@@ -173,7 +160,6 @@ class _$LoginStateImpl implements _LoginState {
   const _$LoginStateImpl(
       {this.buttonEnabled = false,
       this.emailError = false,
-      this.passwordError = false,
       this.passwordVisible = false,
       this.isLoading = false,
       this.hasNoConnection = false,
@@ -185,9 +171,6 @@ class _$LoginStateImpl implements _LoginState {
   @override
   @JsonKey()
   final bool emailError;
-  @override
-  @JsonKey()
-  final bool passwordError;
   @override
   @JsonKey()
   final bool passwordVisible;
@@ -203,7 +186,7 @@ class _$LoginStateImpl implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(buttonEnabled: $buttonEnabled, emailError: $emailError, passwordError: $passwordError, passwordVisible: $passwordVisible, isLoading: $isLoading, hasNoConnection: $hasNoConnection, message: $message)';
+    return 'LoginState(buttonEnabled: $buttonEnabled, emailError: $emailError, passwordVisible: $passwordVisible, isLoading: $isLoading, hasNoConnection: $hasNoConnection, message: $message)';
   }
 
   @override
@@ -215,8 +198,6 @@ class _$LoginStateImpl implements _LoginState {
                 .equals(other.buttonEnabled, buttonEnabled) &&
             (identical(other.emailError, emailError) ||
                 other.emailError == emailError) &&
-            (identical(other.passwordError, passwordError) ||
-                other.passwordError == passwordError) &&
             (identical(other.passwordVisible, passwordVisible) ||
                 other.passwordVisible == passwordVisible) &&
             (identical(other.isLoading, isLoading) ||
@@ -231,7 +212,6 @@ class _$LoginStateImpl implements _LoginState {
       runtimeType,
       const DeepCollectionEquality().hash(buttonEnabled),
       emailError,
-      passwordError,
       passwordVisible,
       isLoading,
       hasNoConnection,
@@ -248,7 +228,6 @@ abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {final dynamic buttonEnabled,
       final bool emailError,
-      final bool passwordError,
       final bool passwordVisible,
       final bool isLoading,
       final bool hasNoConnection,
@@ -258,8 +237,6 @@ abstract class _LoginState implements LoginState {
   dynamic get buttonEnabled;
   @override
   bool get emailError;
-  @override
-  bool get passwordError;
   @override
   bool get passwordVisible;
   @override

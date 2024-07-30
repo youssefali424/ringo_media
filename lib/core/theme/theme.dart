@@ -38,8 +38,14 @@ ThemeData generateLightTheme() {
       /// flutter follows material design and its guidelines
       /// but in design i couldn't match material design with
       /// the given style guidelines in Figma
-      textTheme:
-          const TextTheme().apply(bodyColor: primary, displayColor: primary),
+      /// which is why i depend on custom font handling
+      textTheme: const TextTheme(
+        bodyLarge: TextStyle(),
+      ).apply(
+        bodyColor: primary,
+        displayColor: primary,
+        fontFamily: "Urbanist",
+      ),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith((states) {
