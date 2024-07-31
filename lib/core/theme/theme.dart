@@ -30,91 +30,109 @@ ThemeData generateLightTheme() {
   InputBorder inputBorder(Color color) =>
       UnderlineInputBorder(borderSide: BorderSide(color: color));
   return ThemeData(
-      colorScheme: colorScheme,
-      primaryColor: primary,
+    colorScheme: colorScheme,
+    primaryColor: primary,
+    disabledColor: disabledColor,
 
-      /// text theme isnt clear in desgin "style guidelines"
-      /// flutter follows material design and its guidelines
-      /// but in design i couldn't match material design with
-      /// the given style guidelines in Figma
-      /// which is why i depend on custom font handling
-      textTheme: const TextTheme(
-        bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-        bodyMedium: TextStyle(),
-        bodySmall: TextStyle(),
-        displayLarge: TextStyle(),
-        displayMedium: TextStyle(),
-        displaySmall: TextStyle(),
-        headlineLarge: TextStyle(),
-        headlineMedium: TextStyle(),
-        headlineSmall: TextStyle(),
-        labelLarge: TextStyle(),
-        labelMedium: TextStyle(),
-        labelSmall: TextStyle(),
-        titleLarge: TextStyle(),
-        titleMedium: TextStyle(),
-        titleSmall: TextStyle(),
-      ).apply(
-        bodyColor: primary,
-        displayColor: primary,
-        fontFamily: "Urbanist",
-        decorationColor: primary,
+    /// text theme isnt clear in desgin "style guidelines"
+    /// flutter follows material design and its guidelines
+    /// but in design i couldn't match material design with
+    /// the given style guidelines in Figma
+    /// which is why i depend on custom font handling
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+      bodyMedium: TextStyle(),
+      bodySmall: TextStyle(),
+      displayLarge: TextStyle(),
+      displayMedium: TextStyle(),
+      displaySmall: TextStyle(),
+      headlineLarge: TextStyle(),
+      headlineMedium: TextStyle(),
+      headlineSmall: TextStyle(),
+      labelLarge: TextStyle(),
+      labelMedium: TextStyle(),
+      labelSmall: TextStyle(),
+      titleLarge: TextStyle(),
+      titleMedium: TextStyle(),
+      titleSmall: TextStyle(),
+    ).apply(
+      bodyColor: primary,
+      displayColor: primary,
+      fontFamily: "Urbanist",
+      decorationColor: primary,
+    ),
+    textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) {
+          return disabledColor;
+        }
+        return primary;
+      }),
+      foregroundColor: const WidgetStatePropertyAll(Colors.white),
+    )),
+    filledButtonTheme: FilledButtonThemeData(
+        style: ButtonStyle(
+      padding: const WidgetStatePropertyAll(EdgeInsets.all(16)),
+      shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+      backgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) {
+          return disabledColor;
+        }
+        return primary;
+      }),
+      foregroundColor: const WidgetStatePropertyAll(Colors.white),
+    )),
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: const TextStyle(
+        color: primary,
+        fontSize: 21,
+        fontWeight: FontWeight.w600,
       ),
-      textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.resolveWith((states) {
-          if (states.contains(WidgetState.disabled)) {
-            return disabledColor;
-          }
-          return primary;
-        }),
-        foregroundColor: const WidgetStatePropertyAll(Colors.white),
-      )),
-      filledButtonTheme: FilledButtonThemeData(
-          style: ButtonStyle(
-        padding: const WidgetStatePropertyAll(EdgeInsets.all(16)),
-        shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
-        backgroundColor: WidgetStateProperty.resolveWith((states) {
-          if (states.contains(WidgetState.disabled)) {
-            return disabledColor;
-          }
-          return primary;
-        }),
-        foregroundColor: const WidgetStatePropertyAll(Colors.white),
-      )),
-      inputDecorationTheme: InputDecorationTheme(
-        labelStyle: const TextStyle(
-          color: primary,
-          fontSize: 21,
-          fontWeight: FontWeight.w600,
-        ),
-        floatingLabelStyle: const TextStyle(
-          color: primary,
-          fontSize: 21,
-          fontWeight: FontWeight.w600,
-        ),
-        // alignLabelWithHint: true,
+      floatingLabelStyle: const TextStyle(
+        color: primary,
+        fontSize: 21,
+        fontWeight: FontWeight.w600,
+      ),
+      // alignLabelWithHint: true,
 
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintStyle: const TextStyle(
-          color: secondary,
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-        ),
-        floatingLabelAlignment: FloatingLabelAlignment.start,
-        border: inputBorder(secondary),
-        focusedBorder: inputBorder(primary),
-        errorBorder: inputBorder(colorScheme.error),
-        enabledBorder: inputBorder(secondary),
-        disabledBorder: inputBorder(disabledColor),
-        suffixIconColor: secondary,
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+      hintStyle: const TextStyle(
+        color: secondary,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
       ),
-      appBarTheme: AppBarTheme(
-          backgroundColor: swatch[100],
-          titleTextStyle: const TextStyle(
-              color: primary,
-              fontFamily: "Urbanist",
-              fontSize: 16,
-              fontWeight: FontWeight.bold)));
+      floatingLabelAlignment: FloatingLabelAlignment.start,
+      border: inputBorder(secondary),
+      focusedBorder: inputBorder(primary),
+      errorBorder: inputBorder(colorScheme.error),
+      enabledBorder: inputBorder(secondary),
+      disabledBorder: inputBorder(disabledColor),
+      suffixIconColor: secondary,
+    ),
+    appBarTheme: AppBarTheme(
+        backgroundColor: swatch[100],
+        titleTextStyle: const TextStyle(
+            color: primary,
+            fontFamily: "Urbanist",
+            fontSize: 16,
+            fontWeight: FontWeight.bold)),
+    tabBarTheme: const TabBarTheme(
+        // tabAlignment: TabAlignment.fill,
+        indicatorSize: TabBarIndicatorSize.tab,
+        labelColor: primary,
+        unselectedLabelColor: secondary,
+        unselectedLabelStyle: TextStyle(
+            color: primary,
+            fontFamily: "Urbanist",
+            fontSize: 18,
+            fontWeight: FontWeight.bold),
+        labelStyle: TextStyle(
+            color: primary,
+            fontFamily: "Urbanist",
+            fontSize: 18,
+            fontWeight: FontWeight.bold)),
+    dividerTheme: DividerThemeData(color: swatch[200]),
+  );
 }

@@ -5,7 +5,7 @@ import '../../../../base/domain/entities/base_state.dart';
 part 'login_state.freezed.dart';
 
 @freezed
-class LoginState with _$LoginState implements BaseBlocState {
+class LoginState with _$LoginState implements BaseState {
   const factory LoginState({
     @Default(false) buttonEnabled,
     @Default(false) bool emailError,

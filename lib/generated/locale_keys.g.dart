@@ -32,5 +32,6 @@ abstract class  LocaleKeys {
   static const productivty = 'productivty';
   static const chooseDate = 'chooseDate';
   static const Continue = 'Continue';
+  static const dueDate = 'dueDate';
 
 }

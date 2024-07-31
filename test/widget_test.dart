@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ringo_media/app.dart';
 
 import 'package:ringo_media/main.dart';
 

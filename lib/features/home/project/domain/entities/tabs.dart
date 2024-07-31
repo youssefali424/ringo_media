@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ringo_media/features/home/project/presentation/screens/account.dart';
-import 'package:ringo_media/features/home/project/presentation/screens/calendar.dart';
+import 'package:ringo_media/features/home/calendar/presentation/screens/calendar.dart';
 import 'package:ringo_media/features/home/project/presentation/screens/grid.dart';
 import 'package:ringo_media/features/home/project/presentation/screens/project.dart';
 
