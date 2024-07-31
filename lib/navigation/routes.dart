@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ringo_media/features/auth/login/presentation/screens/login_screen.dart';
 import 'package:ringo_media/features/home/project/domain/entities/tabs.dart';
@@ -21,7 +22,13 @@ GoRouter generateRoutes() {
               (e) => GoRoute(
                 name: e.name,
                 path: '/home/${e.route}',
-                builder: (context, state) => e.screen,
+                pageBuilder: (context, state) {
+                  return CustomTransitionPage(
+                      child: e.screen,
+                      transitionsBuilder:
+                          (_, animation, secondaryAnimation, child) =>
+                              FadeTransition(opacity: animation, child: child));
+                },
               ),
             )
             .toList(),
